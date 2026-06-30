@@ -1,187 +1,908 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Lẩu Làng Ếch - Chuỗi Lẩu Ếch Măng Cay Hàng Đầu Hà Nội</title>
-    <meta name="description" content="Hệ thống Lẩu Làng Ếch với 3 cơ sở tại Hà Nội. Thực đơn đa dạng, đặc sản lẩu ếch măng cay đậm đà, không gian ấm cúng.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+
+  <title>DOSHI - Hệ Thống Đào Tạo Chăm Sóc & Spa Giày Chuyên Nghiệp</title>
+  <meta name="description" content="Hệ thống đào tạo khóa học vệ sinh giày Online & Offline chuyên nghiệp của Doshi. Học kỹ thuật giặt máy, sấy đối lưu, tẩy ố UV, thay đế thể thao và repaint da lộn.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">
-                <img src="images/logo.png" alt="Lẩu Làng Ếch" class="logo-img">
-            </a>
-            <ul class="nav-links">
-                <li><a href="#about">Về chúng tôi</a></li>
-                <li><a href="#menu">Thực đơn</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Đặt Bàn Ngay</a>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="badge fade-up">Ngon - Bổ - Rẻ</span>
-            <h1 class="fade-up delay-1">Hệ Thống<br>Lẩu Làng Ếch</h1>
-            <p class="fade-up delay-2">Tụ tập bạn bè, nhậu lai rai với nồi lẩu ếch măng cay đậm đà cùng thực đơn đa dạng bậc nhất tại Hà Nội.</p>
-            <div class="hero-buttons fade-up delay-3">
-                <a href="#menu" class="btn btn-primary btn-large">Khám Phá Thực Đơn</a>
-                <a href="#contact" class="btn btn-outline btn-large">Chỉ Đường</a>
-            </div>
+  <!-- ==========================================================================
+       GLOBAL NAVBAR / HEADER
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo-wrapper" id="nav-logo">
+        <img src="logo.jpg" alt="DOSHI" class="logo-img">
+      </div>
+      
+      <!-- Mobile hamburger toggle button -->
+      <button class="nav-mobile-toggle" id="btn-nav-mobile-toggle" style="display: none;">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <nav class="nav-links-wrapper">
+        <a href="#" class="nav-link active" data-view="landing">Giới Thiệu</a>
+        <a href="#" class="nav-link" id="nav-link-online">Khóa Học Online</a>
+        <a href="#" class="nav-link" id="nav-link-management">Quản Lý Cửa Hàng</a>
+        <a href="#" class="nav-link" id="nav-link-offline">Khóa Học Offline</a>
+        
+        <!-- Auth status widget -->
+        <div id="user-nav-info" class="user-widget" style="display: none;">
+          <div class="user-avatar-circle">HV</div>
+          <span class="user-display-name">Học Viên</span>
+          <a href="#" class="btn btn-outline btn-sm" id="btn-logout" style="padding: 6px 12px; margin-left: 10px;">Đăng xuất</a>
         </div>
-    </header>
+        
+        <a href="#" class="btn btn-primary btn-sm" id="btn-nav-login" style="display: block;">Vào Học Ngay</a>
+      </nav>
+    </div>
+  </header>
 
-    <section id="about" class="about-section py-20">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image-wrapper fade-in-left">
-                    <img src="images/restaurant_vibe.png" alt="Không gian Lẩu Làng Ếch" class="about-image">
-                    <div class="experience-badge">
-                        <span class="number">100k</span>
-                        <span class="text">Chỉ từ 100k/người</span>
-                    </div>
-                </div>
-                <div class="about-content fade-in-right">
-                    <h2 class="section-title">Hệ Thống Lẩu Ếch<br><span>Hàng Đầu Hà Nội</span></h2>
-                    <p class="section-description">
-                        Phát triển từ cơ sở đầu tiên tại Bách Khoa, Lẩu Làng Ếch nay đã mở rộng thành chuỗi nhà hàng với 3 chi nhánh rộng rãi. Chúng tôi tự hào mang đến không gian hiện đại, sạch sẽ và thoáng mát, cực kỳ lý tưởng cho các buổi liên hoan, tụ tập hay những bữa ăn gia đình.
-                    </p>
-                    <ul class="features-list">
-                        <li>
-                            <div class="feature-icon">🍲</div>
-                            <div>
-                                <h3>Hương vị đậm đà</h3>
-                                <p>Nước lẩu chua cay vừa miệng, ếch xào săn chắc ngấm gia vị.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">💰</div>
-                            <div>
-                                <h3>Giá siêu sinh viên</h3>
-                                <p>Chỉ từ 100.000đ - 200.000đ/người để no nê quên lối về.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon">🛵</div>
-                            <div>
-                                <h3>Giao hàng tận nơi</h3>
-                                <p>Có mặt trên ShopeeFood, Foody, đóng gói sạch sẽ, giữ nóng.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <!-- ==========================================================================
+       VIEW: LANDING PAGE
+       ========================================================================== -->
+  <main id="view-landing" class="view-section view-active">
+    
+    <!-- Hero Banner Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-top">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right: 6px;">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            Trung Tâm Đào Tạo Spa Giày Doshi
+          </div>
+          <h1 class="hero-title">
+            Đào Tạo Spa Giày
+            <span>Online & Offline Chuyên Nghiệp</span>
+          </h1>
+          <div class="hero-slogan">HỌC DỄ HIỂU - LÀM CHUYÊN NGHIỆP - KINH DOANH HIỆU QUẢ</div>
+          <p class="hero-description">
+            Đăng nhập tài khoản được cấp để tự học lý thuyết vận hành online. Hoặc trực tiếp đăng ký tư vấn tham gia thực hành offline cầm tay chỉ việc: tẩy ố vàng, thay khâu đế thể thao, repaint sơn súng phục hồi giày hiệu.
+          </p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary" id="btn-hero-online">Vào Học Online (Đã cấp TK)</a>
+            <a href="#" class="btn btn-outline" id="btn-hero-offline">Xem Khóa Học Offline</a>
+          </div>
         </div>
+        
+        <div class="hero-graphics-container">
+          <div class="hero-image-wrapper">
+            <img src="real_photo.jpg" alt="Doshi Training Academy" class="hero-real-image">
+            <!-- Pulsating indicator lights on the red washing machine control panel -->
+            <div class="pulse-dot pulse-yellow" style="top: 48.7%; left: 19.5%;"></div>
+            <div class="pulse-dot pulse-green" style="top: 48.7%; left: 22.8%;"></div>
+            <div class="pulse-dot pulse-green" style="top: 48.7%; left: 26.1%;"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="menu" class="menu-section py-20">
-        <div class="container text-center">
-            <h2 class="section-title fade-up">Thực Đơn <span>Đa Dạng</span></h2>
-            <p class="section-description mx-auto fade-up delay-1">Khám phá menu đa dạng làm nên tên tuổi của chuỗi Lẩu Làng Ếch: từ lẩu ếch, lẩu gà đến các món xào, rang hấp dẫn.</p>
-            
-            <div class="menu-gallery mt-10">
-                <div class="menu-gallery-item fade-up delay-1">
-                    <img src="images/menu_1.jpg" alt="Thực đơn món lẩu" class="menu-gallery-image">
-                </div>
-                <div class="menu-gallery-item fade-up delay-2">
-                    <img src="images/menu_2.jpg" alt="Thực đơn món ếch" class="menu-gallery-image">
-                </div>
-                <div class="menu-gallery-item fade-up delay-3">
-                    <img src="images/menu_3.jpg" alt="Thực đơn combo" class="menu-gallery-image">
-                </div>
+    <!-- Training Programs Section with Online/Offline split -->
+    <section class="container" id="section-curriculum">
+      <div class="section-header">
+        <h2>Chương Trình Đào Tạo</h2>
+        <p>Lựa chọn hình thức học phù hợp với nhu cầu. Đăng nhập học lý thuyết online cơ bản hoặc trực tiếp đăng ký học thực hành chuyên sâu.</p>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="landing-course-tabs">
+        <button class="landing-tab-btn active" data-type="online" id="btn-tab-online">
+          <svg class="flat-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          Khóa Học Online
+        </button>
+        <button class="landing-tab-btn" data-type="management" id="btn-tab-management">
+          <svg class="flat-icon" viewBox="0 0 24 24" width="18" height="18"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          Quản Lý Cửa Hàng
+        </button>
+        <button class="landing-tab-btn" data-type="offline" id="btn-tab-offline">
+          <svg class="flat-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+          Lớp Học Offline
+        </button>
+      </div>
+
+      <!-- TAB PANE: ONLINE COURSES -->
+      <div class="landing-tab-pane active" id="pane-online">
+        <div class="curriculum-grid">
+          
+          <!-- Module 1 -->
+          <div class="module-card">
+            <div class="module-card-number">1</div>
+            <div class="module-card-header">
+              <h3>Tự lắp đặt máy giặt & sấy</h3>
             </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Kết nối đường cấp nước, ống xả nước và lắp lọc thô.</li>
+                <li>Đấu nối nguồn điện 220V và dây tiếp địa bảo vệ an toàn.</li>
+                <li>Quy trình căn chỉnh thăng bằng giảm độ rung lắc tối đa.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="module-card">
+            <div class="module-card-number">2</div>
+            <div class="module-card-header">
+              <h3>Hướng dẫn sử dụng máy giặt</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Thiết lập mực nước, thời gian giặt và tốc độ xoay chổi.</li>
+                <li>Lồng ghép sắp xếp giày đúng vị trí chổi đánh sạch mọi khe.</li>
+                <li>Phương pháp sử dụng hóa chất trung tính tạo bọt giặt sâu.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="module-card">
+            <div class="module-card-number">3</div>
+            <div class="module-card-header">
+              <h3>Hướng dẫn sử dụng tủ sấy</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Cài đặt chế độ sấy tuần hoàn gió nóng nhiệt đối lưu.</li>
+                <li>Cách thiết lập nhiệt độ an toàn không gây co rút hay nứt da.</li>
+                <li>Kỹ thuật treo giày tối ưu lưu lượng gió sấy khô nhanh.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="module-card">
+            <div class="module-card-number">4</div>
+            <div class="module-card-header">
+              <h3>Vệ sinh giày cơ bản</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Quy trình 5 bước gỡ dây, xả đất thô và tạo bọt thân giày.</li>
+                <li>Phân loại chà giặt giày thể thao vải dệt cơ bản.</li>
+                <li>Lựa chọn bàn chải lông mềm bảo vệ nếp dệt mesh mỏng.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Module 5 -->
+          <div class="module-card">
+            <div class="module-card-number">5</div>
+            <div class="module-card-header">
+              <h3>Vệ sinh giày chuyên sâu</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Kỹ thuật xử lý bùn đất bám lâu ngày, tẩy vết dầu mỡ khó.</li>
+                <li>Cách spa giày da lộn cao cấp, da nubuck hoàn toàn bằng tay.</li>
+                <li>Kỹ năng nắn phục hồi form dáng bị móp méo bằng shoe tree.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Module 6 -->
+          <div class="module-card">
+            <div class="module-card-number">6</div>
+            <div class="module-card-header">
+              <h3>Quy trình Giặt - Vắt - Sấy</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Phối hợp nhịp nhàng 3 khâu tăng hiệu suất xử lý lên 5 lần.</li>
+                <li>Phương pháp vắt ráo ly tâm dùng đệm bọc chống sốc.</li>
+                <li>Quy trình kiểm thử chất lượng đầu ra QC nghiêm ngặt.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Module 7 -->
+          <div class="module-card">
+            <div class="module-card-number">7</div>
+            <div class="module-card-header">
+              <h3>Hướng dẫn sử dụng tủ tẩy ố UV</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Cơ chế quang hóa phủ kem tẩy ố Sole Bright lên đế cao su.</li>
+                <li>Bọc màng co PE chiếu tia cực tím tủ UV khử oxi hóa đế vàng.</li>
+                <li>Các lưu ý kiểm soát nhiệt độ không làm bong keo bong đế.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
+        <div style="text-align: center; margin-bottom: 40px;">
+          <a href="#" class="btn btn-primary btn-online-auth-trigger" data-redirect="online" style="padding: 14px 40px; font-size: 1.05rem;">Đăng Nhập Vào Học Online</a>
+        </div>
+      </div>
+
+      <!-- TAB PANE: STORE MANAGEMENT -->
+      <div class="landing-tab-pane" id="pane-management">
+        <div class="curriculum-grid">
+          
+          <!-- Management 1 -->
+          <div class="module-card">
+            <div class="module-card-number">1</div>
+            <div class="module-card-header">
+              <h3>Quy trình giao nhận giày chuyên nghiệp</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Cách nhận giày từ khách, kiểm soát và xác định lỗi có sẵn.</li>
+                <li>Quy chuẩn in hóa đơn giao nhận và gán tag định danh chống nhầm.</li>
+                <li>Phương pháp đóng gói, bảo quản giày trước và sau khi hoàn thiện.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Management 2 -->
+          <div class="module-card">
+            <div class="module-card-number">2</div>
+            <div class="module-card-header">
+              <h3>Tư vấn dịch vụ & Phân loại chất liệu</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Phân biệt nhanh 5 chất liệu da lộn, nubuck, mesh để đặt lịch giặt.</li>
+                <li>Nghệ thuật khơi gợi nhu cầu upsell tẩy ố vàng, repaint, dán đế.</li>
+                <li>Lập biên bản thỏa thuận rủi ro cho giày giả da PU bị lão hóa bong tróc.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Management 3 -->
+          <div class="module-card">
+            <div class="module-card-number">3</div>
+            <div class="module-card-header">
+              <h3>Sử dụng phần mềm quản lý cửa hàng</h3>
+            </div>
+            <div class="module-card-body">
+              <ul class="module-bullets">
+                <li>Khởi tạo đơn hàng nhanh, chọn dịch vụ tương ứng trên app.</li>
+                <li>Ghi nhận thanh toán chuyển khoản/tiền mặt, tra cứu công nợ.</li>
+                <li>Xem biểu đồ doanh thu cửa hàng, kiểm tra hiệu suất nhân viên.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div style="text-align: center; margin-bottom: 40px;">
+          <a href="#" class="btn btn-primary btn-online-auth-trigger" data-redirect="management" style="padding: 14px 40px; font-size: 1.05rem;">Đăng Nhập Học Quản Lý</a>
+        </div>
+      </div>
+
+      <!-- TAB PANE: OFFLINE COURSES -->
+      <div class="landing-tab-pane" id="pane-offline">
+        <div class="offline-grid">
+          
+          <!-- Offline 1: Vệ sinh giày chuyên sâu -->
+          <div class="offline-card">
+            <div class="offline-card-header">
+              <div class="offline-card-title-box">
+                <span class="offline-card-icon">
+                  <svg class="flat-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M4 16v-2c0-1.5 1-2.5 2.5-3L11 9.5c1.5-.5 3 .5 3.5 2L16 16m-12 0h16a2 2 0 002-2v-2l-3-4-4-1H9L4 12v4z"></path><path d="M7 16v2m4-2v2m4-2v2"></path></svg>
+                </span>
+                <h3>Nghiệp vụ Vệ sinh Giày chuyên sâu</h3>
+              </div>
+              <span class="badge badge-gold">Đầu ngành</span>
+            </div>
+            <div class="offline-card-body">
+              <p class="offline-card-description">
+                Đào tạo thực hành cầm tay chỉ việc phân loại chất liệu và giặt giày bằng cả tay và máy công nghệ cao Doshi tại trung tâm đào tạo của Doshi.
+              </p>
+              <ul class="offline-skills-list">
+                <li>Nhận biết chính xác 5 loại chất liệu (da trơn, da lộn, nubuck, canvas, mesh)</li>
+                <li>Thực hành xử lý bùn đất, vết loang màu, vết mốc bám sâu</li>
+                <li>Vận hành máy giặt chổi quay Doshi công suất lớn an toàn</li>
+                <li>Kiểm soát quy trình vắt ly tâm và sấy tuần hoàn bảo vệ form</li>
+              </ul>
+              <div class="offline-card-footer">
+                <div class="offline-duration-badge">⏱️ 7 ngày học trực tiếp</div>
+                <button class="btn btn-primary btn-sm btn-book-offline" data-course="Nghiệp vụ Vệ sinh Giày chuyên sâu">Đăng Ký Tư Vấn</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offline 2: Tẩy ố vàng UV -->
+          <div class="offline-card">
+            <div class="offline-card-header">
+              <div class="offline-card-title-box">
+                <span class="offline-card-icon">
+                  <svg class="flat-icon" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </span>
+                <h3>Kỹ thuật Tẩy ố Vàng & Khử mùi Ozone</h3>
+              </div>
+              <span class="badge badge-gold">Hút khách</span>
+            </div>
+            <div class="offline-card-body">
+              <p class="offline-card-description">
+                Làm chủ hóa chất tẩy ố Sole Bright kết hợp buồng chiếu UV chuyên nghiệp và công nghệ khử mùi Ozone để phục hồi cao su oxi hóa.
+              </p>
+              <ul class="offline-skills-list">
+                <li>Pha trộn dung dịch kích hoạt tẩy ố theo công thức tối ưu</li>
+                <li>Thao tác bôi phủ Sole Bright và quấn màng co PE giữ ẩm</li>
+                <li>Cài đặt nhiệt độ và tần suất chiếu UV trong tủ Doshi</li>
+                <li>Vận hành tủ Ozone khử trùng mầm nấm mốc và mùi hôi triệt để</li>
+              </ul>
+              <div class="offline-card-footer">
+                <div class="offline-duration-badge">⏱️ 5 ngày học trực tiếp</div>
+                <button class="btn btn-primary btn-sm btn-book-offline" data-course="Kỹ thuật Tẩy ố Vàng & Khử mùi Ozone">Đăng Ký Tư Vấn</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offline 3: Thay đế giày thể thao -->
+          <div class="offline-card">
+            <div class="offline-card-header">
+              <div class="offline-card-title-box">
+                <span class="offline-card-icon">
+                  <svg class="flat-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+                </span>
+                <h3>Thay đế & Khâu đế Giày thể thao</h3>
+              </div>
+              <span class="badge badge-gold">VIP - Lợi Nhuận Cao</span>
+            </div>
+            <div class="offline-card-body">
+              <p class="offline-card-description">
+                Đặc trị các ca giày thể thao hỏng đế, mòn gót, bong keo nặng. Kỹ thuật tách đế cũ, vệ sinh bề mặt, trét keo nhiệt PU và may chỉ chịu lực.
+              </p>
+              <ul class="offline-skills-list">
+                <li>Sử dụng máy khò nhiệt tách đế không làm biến dạng mũi giày</li>
+                <li>Xử lý lớp keo cũ bằng dung dịch tẩy dung môi mạnh</li>
+                <li>Quét keo nhiệt (PU) chuyên dụng và ép lực nén định hình đế</li>
+                <li>May chỉ gia cố đế giày thể thao bền bỉ (McKay stitch)</li>
+              </ul>
+              <div class="offline-card-footer">
+                <div class="offline-duration-badge">⏱️ 10 ngày học trực tiếp</div>
+                <button class="btn btn-primary btn-sm btn-book-offline" data-course="Thay đế & Khâu đế Giày thể thao">Đăng Ký Tư Vấn</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offline 4: Phục hồi repaint màu -->
+          <div class="offline-card">
+            <div class="offline-card-header">
+              <div class="offline-card-title-box">
+                <span class="offline-card-icon">
+                  <svg class="flat-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.7255 3.09032 17.1962 4.85857 19C5.3642 19.5 5.25 20.5 4.5 21C3.5 21.5 2.5 22 2 22"></path><circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"></circle><circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"></circle><circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"></circle><circle cx="15.5" cy="14.5" r="1.5" fill="currentColor"></circle></svg>
+                </span>
+                <h3>Nghệ thuật Phục hồi màu & Repaint nhuộm giày</h3>
+              </div>
+              <span class="badge badge-gold">Nghệ nhân</span>
+            </div>
+            <div class="offline-card-body">
+              <p class="offline-card-description">
+                Làm chủ kỹ thuật chà xả da cũ, pha chế màu sơn Angelus, dặm màu da trơn và kỹ thuật nhuộm phục hồi màu da lộn, mesh bạc màu.
+              </p>
+              <ul class="offline-skills-list">
+                <li>Tẩy lớp bóng bảo vệ da cũ bằng Preparer/Deglazer</li>
+                <li>Kỹ thuật pha màu chuẩn 99% theo bảng màu gốc của hãng</li>
+                <li>Làm chủ súng phun sơn Airbrush cho lớp màu mịn đẹp</li>
+                <li>Nhuộm màu da lộn, da nubuck không làm khô xơ sợi da</li>
+              </ul>
+              <div class="offline-card-footer">
+                <div class="offline-duration-badge">⏱️ 12 ngày học trực tiếp</div>
+                <button class="btn btn-primary btn-sm btn-book-offline" data-course="Nghệ thuật Phục hồi màu & Repaint nhuộm giày">Đăng Ký Tư Vấn</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="contact-section py-20">
-        <div class="container contact-grid">
-            <div class="contact-info fade-in-left">
-                <h2 class="section-title">Ghé Thăm<br><span>Chúng Tôi</span></h2>
-                <p class="section-description">Liên hệ đặt bàn trước để được phục vụ chu đáo nhất, đặc biệt vào những ngày cuối tuần.</p>
-                
-                <div class="info-items">
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div>
-                            <h4>Hệ thống 3 cơ sở</h4>
-                            <ul style="color: var(--text-muted); list-style: circle; padding-left: 20px; margin-top: 5px;">
-                                <li><strong>CS1:</strong> 107 - K11A Nguyễn Hiền, Bách Khoa</li>
-                                <li><strong>CS2:</strong> 101 - K17 Nguyễn Hiền, Bách Khoa</li>
-                                <li><strong>CS3:</strong> 47 Nguyễn Ngọc Vũ, Trung Hòa, Cầu Giấy</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">📞</div>
-                        <div>
-                            <h4>Điện thoại</h4>
-                            <p class="highlight-text">0868 681 566</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">⏰</div>
-                        <div>
-                            <h4>Giờ mở cửa</h4>
-                            <p>10:00 – 23:00 Hàng ngày</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact-form-container fade-in-right">
-                <form id="booking-form" class="contact-form">
-                    <h3>Đặt Bàn Trực Tuyến</h3>
-                    <div class="form-group">
-                        <input type="text" id="booking-name" placeholder="Họ và tên" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="booking-phone" placeholder="Số điện thoại" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="date" id="booking-date" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="time" id="booking-time" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="booking-guests" placeholder="Số người" min="1" required>
-                    </div>
-                    <button type="submit" id="booking-submit" class="btn btn-primary btn-full">Gửi Yêu Cầu</button>
-                    <div id="booking-status" style="margin-top: 15px; text-align: center; font-weight: 600; display: none;"></div>
-                </form>
-            </div>
+    <!-- Key Benefits Section -->
+    <section class="benefits-section" id="section-benefits">
+      <div class="container">
+        <div class="section-header" style="margin-top: 0;">
+          <h2 style="color: #FFFFFF;">Quyền Lợi Của Học Viên</h2>
+          <p style="color: #94A3B8;">Khi sở hữu bộ khóa học Doshi, bạn được trang bị đầy đủ hành trang để tự tin làm nghề và phát triển tiệm.</p>
         </div>
+
+        <div class="benefits-grid">
+          
+          <!-- Benefit 1 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <svg class="flat-icon" viewBox="0 0 24 24" width="28" height="28"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12" y2="18"></line></svg>
+            </div>
+            <h3>Học Online Mọi Lúc</h3>
+            <p>Dễ dàng truy cập xem bài giảng trên điện thoại, máy tính bảng hoặc laptop mọi lúc, mọi nơi khi có internet.</p>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <svg class="flat-icon" viewBox="0 0 24 24" width="28" height="28"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"></path></svg>
+            </div>
+            <h3>Xem Lại Không Giới Hạn</h3>
+            <p>Xem đi xem lại thoải mái để thực hành ôn tập các bước kỹ thuật khó cho đến khi thành thạo tay nghề thực tế.</p>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <svg class="flat-icon" viewBox="0 0 24 24" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Hướng Dẫn Từ Chuyên Gia</h3>
+            <p>Nội dung đúc kết từ hàng nghìn đơn hàng spa thực tế tại hệ thống Doshi, hướng dẫn trực quan, dễ hiểu.</p>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <svg class="flat-icon" viewBox="0 0 24 24" width="28" height="28"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>
+            </div>
+            <h3>Hỗ Trợ Trọn Đời</h3>
+            <p>Đồng hành cùng học viên trong suốt chặng đường lập nghiệp, giải đáp khó khăn kỹ thuật và cung cấp hóa chất sỉ.</p>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <footer class="footer">
-        <div class="container text-center">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="Lẩu Làng Ếch" class="footer-logo-img">
-            </div>
-            <p>Hệ thống lẩu ếch măng cay hàng đầu</p>
-            <div class="social-links mt-5">
-                <a href="https://www.facebook.com/laulangech.NguyenHien" target="_blank" class="social-btn">Facebook</a>
-                <a href="#" class="social-btn">ShopeeFood</a>
-            </div>
-            <p class="copyright mt-5">&copy; 2026 Lẩu Làng Ếch. All rights reserved.</p>
+    <!-- CTA & Promo Section -->
+    <section class="promo-banner">
+      <div class="container">
+        <h2 class="promo-title">Đầu tư hôm nay - Làm chủ nghề ngay - Tạo thu nhập bền vững!</h2>
+        <div class="promo-actions">
+          <a href="#" class="btn btn-white" id="btn-promo-online">Vào Học Online</a>
+          <button class="btn btn-outline btn-book-offline" data-course="Đăng ký tư vấn khóa học Offline" style="border-color: #FFFFFF; color: #FFFFFF;">Đặt Lịch Tư Vấn Offline</button>
         </div>
+      </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="footer" id="section-contact">
+      <div class="container footer-grid">
+        
+        <div class="footer-about">
+          <h3>DOSHI ACADEMY</h3>
+          <p>Hệ thống cung cấp giải pháp máy giặt giày, tủ sấy tuần hoàn, tủ tẩy ố UV và hóa chất chăm sóc giày chuyên nghiệp hàng đầu tại Việt Nam. Đồng hành khởi nghiệp cùng hàng trăm chủ tiệm trên cả nước.</p>
+          <a href="tel:0903427743" class="btn btn-primary" style="padding: 10px 20px;">Hotline: 0903 427 743</a>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Khóa học đào tạo</h4>
+          <ul>
+            <li><a href="#" id="btn-footer-online">Khóa Học Online Cơ Bản</a></li>
+            <li><a href="#" class="btn-book-offline" data-course="Nghiệp vụ Vệ sinh Giày chuyên sâu">Offline: Vệ sinh chuyên sâu</a></li>
+            <li><a href="#" class="btn-book-offline" data-course="Kỹ thuật Tẩy ố Vàng & Khử mùi Ozone">Offline: Tẩy ố vàng cực tím</a></li>
+            <li><a href="#" class="btn-book-offline" data-course="Thay đế & Khâu đế Giày thể thao">Offline: Thay khâu đế thể thao</a></li>
+            <li><a href="#" class="btn-book-offline" data-course="Nghệ thuật Phục hồi màu & Repaint nhuộm giày">Offline: Repaint nhuộm phục hồi</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Thông Tin Liên Hệ</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              <span>Hotline: 0903 427 743</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/>
+              </svg>
+              <span>Website: www.doshivn.com</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Địa chỉ văn phòng: TP. Hồ Chí Minh / Hà Nội</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 DOSHI. Thiết kế và phát triển phục vụ công tác đào tạo kinh doanh chăm sóc giày chuyên nghiệp.</p>
+      </div>
     </footer>
+  </main>
 
-    <!-- Floating Hotline Button -->
-    <a href="tel:0868681566" class="floating-hotline">
-        <div class="hotline-icon">📞</div>
-        <div class="hotline-text">Gọi Ngay<br><span>0868 681 566</span></div>
+  <!-- ==========================================================================
+       VIEW: AUTHENTICATION (LOGIN ONLY - REGISTER REMOVED)
+       ========================================================================== -->
+  <section id="view-login" class="view-section auth-container">
+    
+    <!-- Login Card -->
+    <div class="auth-card" id="card-login">
+      <div class="auth-header">
+        <svg viewBox="0 0 100 100" width="64" height="64" style="display: inline-block;">
+          <circle cx="50" cy="50" r="46" fill="#C00808" />
+          <path d="M50 30a12 12 0 100 24 12 12 0 000-24zm0 28c-14.7 0-26 8.3-26 16v2h52v-2c0-7.7-11.3-16-26-16z" fill="#FFFFFF" />
+        </svg>
+        <h2>Học Viên Đăng Nhập</h2>
+        <p>Vui lòng đăng nhập để xem nội dung video và tài liệu khóa học</p>
+      </div>
+      
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email đăng nhập</label>
+          <input type="email" id="login-email" class="form-control" placeholder="example@doshi.vn" required autocomplete="email">
+        </div>
+        
+        <div class="form-group">
+          <label for="login-password">Mật khẩu</label>
+          <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        
+        <div id="login-error-msg" class="form-error">Sai tài khoản hoặc mật khẩu</div>
+        
+        <button type="submit" class="btn btn-primary w-full" style="height: 48px; font-size: 1rem; margin-top: 10px;">ĐĂNG NHẬP</button>
+      </form>
+      
+      <!-- Account notice footer -->
+      <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--color-light-border); text-align: center; font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+        🔑 <strong>Tài khoản học tập được cấp bởi Doshi Academy.</strong><br>
+        Nếu chưa có tài khoản hoặc cần hỗ trợ cấp mới, vui lòng liên hệ Ban tuyển sinh qua <strong>Hotline: 0903 427 743</strong>.
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VIEW: PROTECTED COURSE LEARNING PANEL
+       ========================================================================== -->
+  <section id="view-course" class="view-section course-layout">
+    
+    <!-- Sidebar Playlist & User widget -->
+    <aside class="course-sidebar">
+      
+      <!-- Selector Tabs: Technical, Management, Offline inside Sidebar workspace -->
+      <div class="course-sidebar-modes">
+        <div class="sidebar-mode-btn active" id="btn-sidebar-online">
+          <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 4px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Kỹ Thuật
+        </div>
+        <div class="sidebar-mode-btn" id="btn-sidebar-management">
+          <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 4px;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          Quản Lý
+        </div>
+        <div class="sidebar-mode-btn" id="btn-sidebar-offline">
+          <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 4px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+          Lớp Offline
+        </div>
+      </div>
+
+      <!-- Online playlist controls - Shown when "Học Online" mode is active -->
+      <div id="sidebar-online-controls" style="display: flex; flex-direction: column; flex-grow: 1; min-height: 0; overflow: hidden;">
+        <!-- Progress Bar Tracker -->
+        <div class="course-progress-panel">
+          <div class="progress-header">Tiến Độ Khóa Học</div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="course-progress-fill"></div>
+          </div>
+          <span class="progress-percentage-text" id="course-progress-text">Hoàn thành: 0/8 bài học (0%)</span>
+        </div>
+
+        <!-- Playlist list of 8 lessons -->
+        <div class="playlist-container" id="course-playlist">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
+      <!-- Offline links / Info - Shown when "Lớp Offline" is active -->
+      <div id="sidebar-offline-controls" style="display: none; padding: 20px; flex-grow: 1; overflow-y: auto; min-height: 0;">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-gold); margin-bottom: 15px; letter-spacing: 0.5px;">Trung tâm Doshi</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.85rem;">
+          <li style="padding: 10px; background-color: rgba(255,255,255,0.02); border-radius: 4px; cursor: pointer; border-left: 2px solid var(--color-gold); display: flex; align-items: center;" onclick="selectOfflineDetail('off-all')">
+            <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 8px; color: var(--color-gold);"><path d="M20 21v-2a4 4 0 00-3-3.87"></path><path d="M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v18"></path><path d="M10 22v-4h4v4"></path></svg>
+            Giới thiệu trung tâm
+          </li>
+          <li style="padding: 10px; background-color: rgba(255,255,255,0.02); border-radius: 4px; cursor: pointer; display: flex; align-items: center;" onclick="selectOfflineDetail('off-1')">
+            <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 8px;"><path d="M4 16v-2c0-1.5 1-2.5 2.5-3L11 9.5c1.5-.5 3 .5 3.5 2L16 16m-12 0h16a2 2 0 002-2v-2l-3-4-4-1H9L4 12v4z"></path></svg>
+            Lớp Vệ sinh giày
+          </li>
+          <li style="padding: 10px; background-color: rgba(255,255,255,0.02); border-radius: 4px; cursor: pointer; display: flex; align-items: center;" onclick="selectOfflineDetail('off-2')">
+            <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 8px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+            Lớp Tẩy ố & Ozone
+          </li>
+          <li style="padding: 10px; background-color: rgba(255,255,255,0.02); border-radius: 4px; cursor: pointer; display: flex; align-items: center;" onclick="selectOfflineDetail('off-3')">
+            <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 8px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+            Lớp Thay & Khâu đế
+          </li>
+          <li style="padding: 10px; background-color: rgba(255,255,255,0.02); border-radius: 4px; cursor: pointer; display: flex; align-items: center;" onclick="selectOfflineDetail('off-4')">
+            <svg class="flat-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right: 8px;"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.7255 3.09032 17.1962 4.85857 19C5.3642 19.5 5.25 20.5 4.5 21C3.5 21.5 2.5 22 2 22"></path></svg>
+            Lớp Phục hồi repaint
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sidebar profile footer -->
+      <div class="sidebar-profile-box">
+        <div class="sidebar-profile-widget">
+          <div class="profile-avatar-circle" id="course-user-avatar">HV</div>
+          <div class="profile-info">
+            <span class="profile-name" id="course-user-name">Tên Học Viên</span>
+            <span class="profile-role" id="course-user-role">Học Viên</span>
+          </div>
+        </div>
+        <div class="btn-logout-icon" id="course-btn-logout" title="Đăng xuất">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+          </svg>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Area -->
+    <main class="course-main">
+      
+      <!-- SUBVIEW 1: ONLINE VIDEO PLAYER (ACTIVE BY DEFAULT) -->
+      <div class="workspace-subview active" id="subview-online-player">
+        <!-- Video Player Frame -->
+        <div class="course-player-wrapper" id="course-video-player-wrapper">
+          <div class="video-aspect-container">
+            <iframe id="course-video-player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Instructor Edit Video Panel (Only visible to Instructors) -->
+        <div id="instructor-edit-video-panel" style="display: none; background-color: rgba(192, 8, 8, 0.08); border: 1px solid rgba(192, 8, 8, 0.3); border-radius: var(--radius-md); padding: 15px; margin-bottom: 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #EF4444; font-weight: 700; font-size: 0.9rem;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+              <span>DÀNH CHO GIẢNG VIÊN: Thay Đổi Link Video</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #94A3B8;">(Chỉ hiển thị với tài khoản Giảng viên)</span>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" id="instructor-video-url-input" class="form-control" style="background-color: #0F172A; border-color: var(--color-dark-border); color: #FFFFFF; font-size: 0.88rem; flex-grow: 1; height: 38px; padding: 0 12px;" placeholder="Dán link embed YouTube mới vào đây (ví dụ: https://www.youtube.com/embed/...)">
+            <button type="button" id="btn-save-video-url" class="btn btn-primary" style="height: 38px; font-size: 0.88rem; padding: 0 15px; background-color: #C00808; border-color: #C00808;">Lưu Thay Đổi</button>
+          </div>
+          <p style="font-size: 0.75rem; color: #94A3B8; margin-top: 8px; margin-bottom: 0;">* Hướng dẫn: Có thể dán link xem thông thường (youtube.com/watch?v=...) hoặc link rút gọn (youtu.be/...), hệ thống sẽ tự chuyển đổi sang link nhúng (embed).</p>
+        </div>
+
+        <!-- Text/Doc Only Placeholder (when lesson has no video) -->
+        <div id="course-text-only-placeholder" style="display: none; background-color: var(--color-dark-card); border: 1px solid var(--color-dark-border); border-radius: var(--radius-lg); padding: 30px; margin-bottom: 24px; text-align: left;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div style="width: 48px; height: 48px; background-color: rgba(212,163,89,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-gold); flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 style="color: #FFFFFF; font-size: 1.2rem; margin-bottom: 4px;">Tài Liệu Quy Trình Nghiệp Vụ</h3>
+              <p style="color: #94A3B8; font-size: 0.85rem; margin: 0;">Bài học này được đào tạo bằng tài liệu quy chuẩn tích hợp dưới đây.</p>
+            </div>
+          </div>
+          <div id="course-text-only-content" style="color: #CBD5E1; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid var(--color-dark-border); padding-top: 20px;">
+            <!-- Process text injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Lesson Metadata Header bar -->
+        <div class="lesson-meta-bar">
+          <div class="lesson-meta-title">
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap; margin-bottom: 6px;">
+              <h2 id="course-lesson-title" style="margin-bottom: 0;">Bài 1: Hướng dẫn tự lắp đặt thiết bị</h2>
+              <a href="#" id="btn-open-external-youtube" target="_blank" style="color: var(--color-gold); font-size: 0.85rem; font-weight: 700; text-decoration: underline; display: none; align-items: center; gap: 4px;">
+                Xem trên YouTube ↗
+              </a>
+            </div>
+            <span id="course-lesson-duration">Thời lượng: 25 phút</span>
+          </div>
+          <div class="lesson-meta-check-wrapper">
+            <input type="checkbox" id="check-current-completed">
+            <label for="check-current-completed">Đã học xong bài này</label>
+          </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="course-tabs">
+          <button class="tab-btn active" data-tab="details">Nội Dung Bài Học</button>
+          <button class="tab-btn" data-tab="files">Tài Liệu Hướng Dẫn</button>
+          <button class="tab-btn" data-tab="qa">Hỏi Đáp Thảo Luận</button>
+        </div>
+
+        <!-- Tab Panes -->
+        <div class="tab-content">
+          <!-- Tab 1: Details -->
+          <div class="tab-pane active" id="tab-pane-details">
+            <div class="tab-pane-content">
+              <h3 style="margin-bottom: 12px; font-size: 1.15rem; color: #FFFFFF;">Khái quát bài giảng</h3>
+              <p id="course-lesson-description" style="color: #94A3B8; font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6;">
+                Nội dung mô tả chi tiết của bài học đang được chọn...
+              </p>
+              
+              <h3 style="border-top: 1px solid var(--color-dark-border); padding-top: 20px; font-size: 1.15rem; color: #FFFFFF; margin-bottom: 16px;">Các mục tiêu kỹ năng cốt lõi</h3>
+              <ul class="course-lesson-bullets" id="course-lesson-bullets">
+                <!-- Rendered dynamically by app.js -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tab 2: Files -->
+          <div class="tab-pane" id="tab-pane-files">
+            <div class="tab-pane-content">
+              <h3 style="margin-bottom: 20px; font-size: 1.15rem; color: #FFFFFF;">Tài liệu và biểu mẫu kỹ thuật tải về</h3>
+              <div class="attachments-grid" id="course-attachments-list">
+                <!-- Rendered dynamically by app.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Q&A -->
+          <div class="tab-pane" id="tab-pane-qa">
+            <div class="tab-pane-content discussion-board">
+              <div class="comment-input-box">
+                <div class="comment-avatar" id="comment-avatar-current">HV</div>
+                <div class="comment-form-wrapper">
+                  <form id="comment-form">
+                    <textarea id="comment-input" class="comment-textarea" placeholder="Nhập câu hỏi hoặc vướng mắc kỹ thuật của bạn trong bài học này..." required></textarea>
+                    <button type="submit" class="btn btn-primary btn-sm" style="float: right;">Gửi Câu Hỏi</button>
+                  </form>
+                </div>
+              </div>
+              <div class="comments-list-wrapper" id="comments-list">
+                <!-- Rendered dynamically by app.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBVIEW 2: OFFLINE CLASS WORKSPACE -->
+      <div class="workspace-subview" id="subview-offline-schedule">
+        <div class="offline-workspace-content">
+          
+          <!-- Academy locations -->
+          <div class="offline-academy-intro">
+            <h3>Học Viện Đào Tạo Thực Hành Doshi</h3>
+            <p>Hệ thống phòng học thực hành được trang bị đầy đủ máy móc công nghiệp, buồng chiếu cực tím UV, bàn khâu đế ép nhiệt lực nén cao và hệ thống súng phun sơn nén khí Airbrush chuyên nghiệp.</p>
+            <div class="offline-academy-details-grid">
+              <div class="academy-location-card">
+                <h4>🏢 Cơ sở miền Nam (Trụ sở chính)</h4>
+                <p>📍 Địa chỉ: 252 Bùi Viện, Phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh</p>
+                <p>📞 Hotline: 0903 427 743</p>
+                <p>🕒 Giờ học thực hành: Sáng 8h30 - 11h30 | Chiều 13h30 - 17h00 (T2 đến T7)</p>
+              </div>
+              <div class="academy-location-card">
+                <h4>🏢 Cơ sở miền Bắc</h4>
+                <p>📍 Địa chỉ: 45 Nguyễn Văn Cừ, Phường Ngọc Lâm, Quận Long Biên, Hà Nội</p>
+                <p>📞 Hotline: 0911 386 816</p>
+                <p>🕒 Giờ học thực hành: Sáng 8h30 - 11h30 | Chiều 13h30 - 17h00 (T2 đến T7)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student's registered offline classes logs -->
+          <div class="offline-registered-classes">
+            <h3>Lịch Học Offline Đã Đăng Ký Của Bạn</h3>
+            <div id="offline-registered-list">
+              <!-- Rendered dynamically by app.js based on registrations -->
+              <div class="registered-class-row">
+                <div class="reg-class-info">
+                  <h4>Khóa học Thay đế & Khâu đế Giày thể thao</h4>
+                  <span>Lớp: TD-K12 | Khai giảng: 15/07/2026 | Cơ sở: TP. Hồ Chí Minh</span>
+                </div>
+                <span class="reg-class-status">Đang Chờ Xếp Lớp</span>
+              </div>
+            </div>
+            
+            <div style="margin-top: 25px; text-align: center;">
+              <button class="btn btn-outline btn-book-offline" data-course="Đăng ký tư vấn khóa học mới từ Dashboard" style="padding: 10px 24px; font-size: 0.9rem;">Đăng ký thêm khóa học Offline khác</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </section>
+
+  <!-- ==========================================================================
+       MODAL: CONSULTATION BOOKING FOR OFFLINE COURSES
+       ========================================================================== -->
+  <div class="modal-overlay" id="consultation-modal">
+    <div class="modal-card">
+      <div class="modal-close-btn" id="btn-close-modal">&times;</div>
+      <div class="modal-header">
+        <h3>Đăng Ký Tư Vấn Offline</h3>
+        <p>Đội ngũ Doshi sẽ liên hệ tư vấn lịch học và ưu đãi học phí trong vòng 24 giờ làm việc.</p>
+      </div>
+      <form id="offline-booking-form">
+        <!-- Hidden input for course name -->
+        <input type="hidden" id="book-course-name" value="">
+
+        <div class="form-group">
+          <label for="book-name">Họ và tên</label>
+          <input type="text" id="book-name" class="form-control" placeholder="Nguyễn Văn A" required>
+        </div>
+
+        <div class="form-group">
+          <label for="book-phone">Số điện thoại Zalo</label>
+          <input type="tel" id="book-phone" class="form-control" placeholder="0901234567" required>
+        </div>
+
+        <div class="form-group">
+          <label for="book-email">Email</label>
+          <input type="email" id="book-email" class="form-control" placeholder="username@gmail.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="book-course-select">Khóa học đăng ký</label>
+          <select id="book-course-select" class="form-control" style="background-color: white;">
+            <option value="Nghiệp vụ Vệ sinh Giày chuyên sâu">Nghiệp vụ Vệ sinh Giày chuyên sâu</option>
+            <option value="Kỹ thuật Tẩy ố Vàng & Khử mùi Ozone">Kỹ thuật Tẩy ố Vàng & Khử mùi Ozone</option>
+            <option value="Thay đế & Khâu đế Giày thể thao">Thay đế & Khâu đế Giày thể thao</option>
+            <option value="Nghệ thuật Phục hồi màu & Repaint nhuộm giày">Nghệ thuật Phục hồi màu & Repaint nhuộm giày</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="book-location">Cơ sở học thực hành</label>
+          <select id="book-location" class="form-control" style="background-color: white;">
+            <option value="TP. Hồ Chí Minh">Cơ sở TP. Hồ Chí Minh (252 Bùi Viện, Q.1)</option>
+            <option value="Hà Nội">Cơ sở Hà Nội (45 Nguyễn Văn Cừ, Long Biên)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="book-msg">Ghi chú hoặc câu hỏi thêm</label>
+          <textarea id="book-msg" class="form-control" style="height: 70px; resize: none;" placeholder="Tôi muốn đăng ký lớp học cuối tuần..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full" style="height: 48px; font-size: 1rem; margin-top: 10px;">GỬI ĐĂNG KÝ NGAY</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating Contact Buttons (Hotline & Zalo) -->
+  <div class="floating-contact-container">
+    <!-- Zalo Button -->
+    <a href="https://zalo.me/0903427743" target="_blank" rel="noopener noreferrer" class="contact-btn btn-zalo" title="Chat qua Zalo">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path d="M12 2C6.48 2 2 5.58 2 10c0 2.29 1.15 4.35 3.02 5.78-.17.65-.62 2.33-.62 2.38 0 .09.05.14.12.1.09-.05 2.11-1.39 2.87-1.89C8.36 16.79 10.12 17 12 17c5.52 0 10-3.58 10-8s-4.48-8-10-8z"/>
+      </svg>
+      <span>Zalo Chat</span>
     </a>
+    
+    <!-- Hotline Call Button -->
+    <a href="tel:0903427743" class="contact-btn btn-hotline" title="Gọi Hotline">
+      <div class="hotline-pulse-ring"></div>
+      <svg class="flat-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span>Gọi Điện thoại</span>
+    </a>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Load Dynamic Scripts -->
+  <script src="mockData.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
